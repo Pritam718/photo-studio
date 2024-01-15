@@ -48,7 +48,7 @@ const ShowImage = () => {
         <Modal
           isOpen={modalOpen}
           onClose={closeModal}
-          imageUrl={'/uploads/'+selectedPhoto.imageUrl}
+          imageUrl={'uploads/'+selectedPhoto.imageUrl}
           title={selectedPhoto.title}
           caption={selectedPhoto.caption}
           id={selectedPhoto._id}
