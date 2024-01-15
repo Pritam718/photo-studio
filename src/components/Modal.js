@@ -133,10 +133,10 @@ fetchLikeCount();
               {
               shareOpen ?
               <div className='lg:flex gap-2'>
-                  <FacebookShareButton url={`http://127.0.0.1:8000/${imageUrl}`} quote={title} hashtag={caption}>
+                  <FacebookShareButton url={`${window.location.href}${imageUrl}`} quote={title} hashtag={caption}>
                     <FacebookIcon className='rounded-full size-14 hover:size-20'></FacebookIcon>
                   </FacebookShareButton>
-                  <WhatsappShareButton url={`http://127.0.0.1:8000/${imageUrl}`} quote={title} hashtag={caption}>
+                  <WhatsappShareButton url={`${window.location.href}${imageUrl}`} quote={title} hashtag={caption}>
                     <WhatsappIcon className='rounded-full size-14 hover:size-20'></WhatsappIcon>
                   </WhatsappShareButton>
               </div>
