@@ -25,7 +25,7 @@ const ShowImage = () => {
     },[]);
     //console.log(posts?.data?.data);
   return (
-    <div className="bg-[url('Images/bg2.webp')]">
+    <div className="h-screen w-full bg-gray-900 bg-cover bg-no-repeat bg-[url('Images/bg2.webp')] overflow-auto">
         <div className="w-full max-w-5xl p-5 pb-10 mx-auto mb-10 gap-5 columns-3 space-y-2 ">
             {
                 posts.data!==undefined && posts.data.data.length >0 && (

@@ -41,7 +41,7 @@ const Nav = () => {
   return (
     
     <>
-      <div className="w-full h-screen bg-no-repeat bg-cover bg-fixed lg:bg-[url('Images/flashes.jpg')] bg-[url('Images/background.jpg')]"
+      <div className="w-full h-screen bg-no-repeat bg-cover bg-fixed lg:bg-[url('Images/flashes.jpg')] bg-[url('Images/background.jpg')] "
       >
         <nav className="flex items-center justify-between container m-auto p-3 md:p-0 ">
           {/* <img src={flashes} alt="" className="w-16 h-16 rounded-full" /> */}
