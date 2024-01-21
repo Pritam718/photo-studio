@@ -22,7 +22,7 @@ const Upload = () => {
         event.target.reset();
     }
   return (
-    <div className="w-full lg:h-screen my-1 bg-no-repeat bg-cover bg-fixed bg-[url('Images/bg2.webp')]">
+    <div className="w-full lg:h-screen my-1 bg-no-repeat bg-cover bg-fixed bg-[url('Images/bg2.webp')] overflow-auto">
         <div className='flex justify-evenly py-5'>
             <h1 className='font-extrabold text-white text-5xl'>flashes</h1>
             <button className='px-2 py-3 rounded-full font-bold text-white text-3xl '>Upload</button>
