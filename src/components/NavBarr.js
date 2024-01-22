@@ -18,7 +18,7 @@ const NavBarr = () => {
     ]
   return (
     <div className='bg-[#0e0e0e] flex justify-center fixed bottom-0 w-full '>
-    <div className='relative  h-16 my-5 flex gap-3 text-gray-600'>
+    <div className='relative my-5 h-10 flex gap-3 text-gray-600'>
         <div className='relative z-10 p-5 bg-white flex place-items-center rounded-r-[2rem] rounded-l-lg gap-3'>
             {
                 menus1?.map((menu,i)=>(

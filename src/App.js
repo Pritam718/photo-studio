@@ -20,7 +20,7 @@ function App() {
   return (
     <BrowserRouter>
         <Toaster position='top-right'/>
-        {window.innerWidth > 768 ? ( // Check if the screen width is greater than 768 pixels
+        {window.innerWidth > 730  ? ( // Check if the screen width is greater than 768 pixels
         <SideBar/>
       ) : (
         <>
