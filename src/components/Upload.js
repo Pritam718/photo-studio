@@ -20,10 +20,11 @@ const Upload = () => {
         const response=await postServices.create(formData);
         console.log(response)
         event.target.reset();
+        setSelectedImage('')
     }
   return (
     //my-1  overflow-auto bg-no-repeat bg-cover bg-fixed  
-    <div className="h-screen w-full bg-no-repeat bg-cover bg-fixed bg-[url('Images/bg2.webp')]">
+    <div className="h-screen w-full lg:overflow-auto bg-no-repeat bg-cover bg-fixed bg-[url('Images/bg2.webp')]">
         <div className='flex justify-evenly lg:py-5 px-2 py-2'>
             <h1 className='font-extrabold text-white text-5xl'>flashes</h1>
             <button className='lg:px-2 lg:py-3 rounded-full font-bold text-white text-3xl '>Upload</button>
@@ -53,7 +54,7 @@ const Upload = () => {
                     //value='caption'
                     onChange={event => setCaption(event.target.value)}/>
             </div>
-            <div className="mx-auto lg:my-10 my-2 px-6   sm:w-8/12 md:w-7/12 lg:w-6/12 xl:w-4/12">
+            <div className="mx-auto lg:my-10 mt-5 px-6   sm:w-8/12 md:w-7/12 lg:w-6/12 xl:w-4/12">
             <div className="relative group w-full h-64 flex justify-center items-center">
                 <div className="absolute inset-0 w-full h-full rounded-xl bg-white bg-opacity-80 shadow-2xl backdrop-blur-xl group-hover:bg-opacity-70 group-hover:scale-110 transition duration-300"></div>
                     <input 
@@ -74,9 +75,9 @@ const Upload = () => {
                             }}}/>
                     <div className="absolute top-0 right-0 bottom-0 left-0 w-full h-full m-auo flex items-center justify-center">
                         <div className="space-y-6 text-center">
-                            <img src={file} className="sm:w-40 w-32 m-auto" alt="illustration"/>
+                            {/*  */}
                             <p className="text-gray-700 text-lg">Drag and drop a file or <label className=" z-20 cursor-pointer text-blue-500 hover:text-blue-600 block">Upload a file</label> </p>
-                            {selectedImage && <img src={selectedImage} alt='img' className='sm:w-40 w-32'/>}
+                            {selectedImage ? <img src={selectedImage} alt='img' className='sm:w-40 w-32 m-auto'/> : <img src={file} className="sm:w-40 w-32 m-auto" alt="illustration"/>}
                         </div>
                     </div>
                 </div>
