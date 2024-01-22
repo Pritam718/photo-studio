@@ -35,7 +35,7 @@ const ShowImage = () => {
                             <>
                             <div key={photo.id} className="mb-4">
                                 <div onClick={() => openModal(photo)} className='cursor-pointer hover:bg-opacity-70 hover:scale-110'>
-                                    <img src={'/uploads/'+photo.imageUrl} alt='img' className=' rounded-md'/>
+                                    <img src={window.location.href+'uploads/'+photo.imageUrl} alt='img' className=' rounded-md'/>
                                 </div>
                             </div>
                             

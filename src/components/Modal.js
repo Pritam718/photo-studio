@@ -54,9 +54,11 @@ const Modal = ({ isOpen, onClose, imageUrl, title, caption, id }) => {
       };
       const response = await likeServices.create(payload);
       //console.log(response.data.data.like)
-      if (response.data.msg === "User has already given a like for this post") {
-        toast.success(response.data.msg);
-      }
+      //console.log(response.data.msg);
+      // if (response.data.msg === "User has already given a like for this post") {
+      //   toast.success(response.data.msg);
+      // }
+      toast.success(response.data.msg);
       //else{
       //   setLikeCount(response.data.data.like);
       // }
