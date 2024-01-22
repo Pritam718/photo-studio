@@ -130,14 +130,14 @@ const Modal = ({ isOpen, onClose, imageUrl, title, caption, id }) => {
               {shareOpen ? (
                 <div className="lg:flex gap-2">
                   <FacebookShareButton
-                    url={`${window.location.href}${imageUrl}`}
+                    url={imageUrl}
                     quote={title}
                     hashtag={caption}
                   >
                     <FacebookIcon className="rounded-full size-14 hover:size-20"></FacebookIcon>
                   </FacebookShareButton>
                   <WhatsappShareButton
-                    url={`${window.location.href}${imageUrl}`}
+                    url={imageUrl}
                     quote={title}
                     hashtag={caption}
                   >
