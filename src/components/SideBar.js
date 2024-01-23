@@ -4,6 +4,7 @@ import { MdOutlineDashboard } from "react-icons/md";
 import { AiOutlineUser } from "react-icons/ai";
 import { FiLogIn } from "react-icons/fi";
 import { RiImageAddFill } from "react-icons/ri";
+import { FaWpexplorer } from "react-icons/fa";
 
 import { Link } from "react-router-dom";
 import { Routes,Route, Navigate, } from 'react-router-dom';
@@ -12,11 +13,13 @@ import ShowImage from "./ShowImage";
 import Upload from "./Upload";
 import Signup from "./Signup";
 import Login from "./Login";
+import Home from "./Home";
 
 const SideBar = () => {
     const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
   const menus = [
-    { name: "dashboard", link: "/", icon: MdOutlineDashboard },
+    { name: "Home", link: "/", icon: MdOutlineDashboard },
+    { name: "Explore", link: "/explore", icon: FaWpexplorer },
     { name: "Upload", link: "/upload", icon: RiImageAddFill },
     { name: "Login", link: "/login", icon: FiLogIn },
     { name: "Signup", link: "/signup", icon: AiOutlineUser },
@@ -69,7 +72,8 @@ const SideBar = () => {
         </div>
       </div>
       <Routes>
-          <Route path='/' element={<ShowImage/>}></Route>
+          <Route path='/' element={<Home/>}></Route>
+          <Route path='/explore' element={<ShowImage/>}></Route>
           <Route path='/upload' element={isAuthenticated ? <Upload /> : <Navigate to="/login"/>}></Route>
           <Route path='/signup' element={<Signup/>}></Route>
           <Route path='/login' element={<Login/>}></Route>

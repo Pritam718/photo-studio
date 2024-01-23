@@ -3,12 +3,13 @@ import { MdOutlineDashboard } from "react-icons/md";
 import { AiOutlineUser } from "react-icons/ai";
 import { FiLogIn } from "react-icons/fi";
 import { RiImageAddFill } from "react-icons/ri";
+import { FaWpexplorer } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 
 const NavBarr = () => {
     const menus1 = [
-        { name: "dashboard", link: "/", icon: MdOutlineDashboard },
-        { name: "Upload", link: "/upload", icon: RiImageAddFill },
+        { name: "Home", link: "/", icon: MdOutlineDashboard },
+        { name: "Explore", link: "/explore", icon: FaWpexplorer },
         
         
       ];
@@ -32,10 +33,14 @@ const NavBarr = () => {
                 ))
             }
         </div>
-        {/* <div className='bg-white rounded-full p-3 '>
+        <div className=' px-2 bg-white  rounded-full'>
+                <Link
+                    to={'/upload'}
+                    >
             <div className='px-2'>{React.createElement(RiImageAddFill, { size: "20" })}</div>
             <div className='text-sm'>Upload </div>
-        </div> */}
+            </Link>
+        </div>
         <div className='relative  z-10 p-5 bg-white flex place-items-center rounded-l-[2rem] rounded-r-lg gap-3'>
             {
                 menus2?.map((menu,i)=>(

@@ -8,6 +8,7 @@ const Upload = () => {
     const [caption,setCaption]=useState('');
     const [image,setImage]=useState('');
     const [selectedImage,setSelectedImage]=useState('');
+    const [loading, setLoading] = useState(false);
 
     const handleSubmit=async(event)=>{
         event.preventDefault();
