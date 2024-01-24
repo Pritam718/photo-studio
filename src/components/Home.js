@@ -27,10 +27,10 @@ const Home = () => {
           <NavSearch setPosts={setPosts} fetchPosts={fetchPosts}/>
         </div>
         <div className="h-screen w-full overflow-auto mt-48">
-        <div className="w-full max-w-5xl p-5 pb-10 mx-auto mb-10 gap-5 columns-3 space-y-2 ">
+        <div >
             {
-                posts.data!==undefined && posts.data.data.length >0 && (
-                    <>
+                posts.data!==undefined && posts.data.data.length >0 ? (
+                    <div className="w-full max-w-5xl p-5 pb-10 mx-auto mb-10 gap-5 columns-3 space-y-2 ">
                         {posts.data.data.map(photo=>(
                            
                             <>
@@ -42,8 +42,9 @@ const Home = () => {
                             
                             </>
                         ))}
-                    </>
+                    </div>
                 )
+                :<h1 className='text-4xl  font-semibold flex items-center justify-center'>Sorry!!! Flashes doesn't have any Images</h1>
             }
             
         </div>
