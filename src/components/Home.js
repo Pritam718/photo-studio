@@ -44,7 +44,7 @@ const Home = () => {
                         ))}
                     </div>
                 )
-                :<h1 className='text-4xl  font-semibold flex items-center justify-center'>Sorry!!! Flashes doesn't have any Images</h1>
+                :<h1 className='text-4xl  font-semibold flex items-center justify-center mx-5'>Sorry!!! Flashes doesn't have any Images</h1>
             }
             
         </div>
