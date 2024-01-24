@@ -12,6 +12,7 @@ const Home = () => {
     useEffect(()=>{
         fetchPosts();
     },[]);
+    
   return (
     <div className="h-screen w-full bg-gray-900 bg-cover bg-no-repeat bg-[url('Images/background.jpg')] overflow-auto">
         
@@ -22,9 +23,9 @@ const Home = () => {
           <h1 className='text-4xl  font-semibold'>Stunning free stock photos for download</h1>
         </div>
         
-        {/* <div className='my-5'>
-          <NavSearch/>
-        </div> */}
+        <div className='my-5'>
+          <NavSearch setPosts={setPosts} fetchPosts={fetchPosts}/>
+        </div>
         <div className="h-screen w-full overflow-auto mt-48">
         <div className="w-full max-w-5xl p-5 pb-10 mx-auto mb-10 gap-5 columns-3 space-y-2 ">
             {
