@@ -26,7 +26,7 @@ const Home = () => {
         <div className='my-5'>
           <NavSearch setPosts={setPosts} fetchPosts={fetchPosts}/>
         </div>
-        <div className="h-screen w-full overflow-auto mt-48">
+        <div className="h-screen w-full  mt-48">
         <div >
             {
                 posts.data!==undefined && posts.data.data.length >0 ? (

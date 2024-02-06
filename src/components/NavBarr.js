@@ -5,8 +5,10 @@ import { FiLogIn } from "react-icons/fi";
 import { RiImageAddFill } from "react-icons/ri";
 import { FaWpexplorer } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const NavBarr = () => {
+    const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
     const menus1 = [
         { name: "Home", link: "/", icon: MdOutlineDashboard },
         { name: "Explore", link: "/explore", icon: FaWpexplorer },
@@ -14,9 +16,12 @@ const NavBarr = () => {
         
       ];
     const menus2=[
-        { name: "Login", link: "/login", icon: FiLogIn },
-        { name: "Signup", link: "/signup", icon: AiOutlineUser },
+        { name: "Join", link: "/login", icon: FiLogIn },
+        { name: "About", link: "/contact", icon: AiOutlineUser },
     ]
+    if(isAuthenticated){
+        menus2[0]={ name: "Logout", link: "/logout", icon: FiLogIn }
+      }
   return (
     <div className='bg-[#0e0e0e] flex justify-center fixed bottom-0 w-full '>
     <div className='relative my-5 h-10 flex gap-3 text-gray-600'>
@@ -33,7 +38,7 @@ const NavBarr = () => {
                 ))
             }
         </div>
-        <div className=' px-2 bg-white  rounded-full'>
+        <div className='relative  z-10 px-2 bg-white  rounded-full'>
                 <Link
                     to={'/upload'}
                     >

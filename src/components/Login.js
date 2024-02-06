@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import userServices from '../services/userServices';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import toast from 'react-hot-toast';
 //import axios from 'axios';
@@ -8,22 +8,33 @@ import toast from 'react-hot-toast';
 const Login = () => {
   
   const dispatch=useDispatch();
-
+  const navigate=useNavigate();
+  const location = useLocation();
+  
+  //console.log(navigate)
   const [email,setEmail]=useState('');
   const [password,setPassword]=useState('');
   const [message, setMessage] = useState('');
   
   const handleLogin=async(event)=>{
-
+    
     try{
+      let from = location?.pathname;
+    console.log(from);
       const formData=new FormData();
     formData.append("email",email);
     formData.append("password",password);
 
     const {data}=await userServices.handleUserLogin(formData);
     dispatch({ type: "LOGIN_SUCCESS", payload: data?.user });
-    console.log(data);
-    toast.success(data.msg)
+    //console.log(data);
+    toast.success(data.msg);
+    if(from=='/upload/login'){
+      navigate('/upload');
+    }else{
+      navigate(-1)
+    }
+    
     setMessage(data.msg);
     } 
     

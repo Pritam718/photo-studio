@@ -14,6 +14,8 @@ import Upload from "./Upload";
 import Signup from "./Signup";
 import Login from "./Login";
 import Home from "./Home";
+import Logout from "./Logout";
+import Contact from "./Contact";
 
 const SideBar = () => {
     const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
@@ -21,10 +23,13 @@ const SideBar = () => {
     { name: "Home", link: "/", icon: MdOutlineDashboard },
     { name: "Explore", link: "/explore", icon: FaWpexplorer },
     { name: "Upload", link: "/upload", icon: RiImageAddFill },
-    { name: "Login", link: "/login", icon: FiLogIn },
-    { name: "Signup", link: "/signup", icon: AiOutlineUser },
+    { name: "Join", link: "/login", icon: FiLogIn },
+    { name: "About", link: "/contact", icon: AiOutlineUser },
     
   ];
+  if(isAuthenticated){
+    menus[3]={ name: "Logout", link: "/logout", icon: FiLogIn }
+  }
   const [open, setOpen] = useState(true);
   return (
     <section className="flex gap-6 ">
@@ -77,6 +82,8 @@ const SideBar = () => {
           <Route path='/upload' element={isAuthenticated ? <Upload /> : <Navigate to="/login"/>}></Route>
           <Route path='/signup' element={<Signup/>}></Route>
           <Route path='/login' element={<Login/>}></Route>
+          <Route path='/logout' element={isAuthenticated?<Logout/>:<Navigate to="/"/>}></Route>
+          <Route path="/contact" element={<Contact/>}></Route>
         </Routes>
     </section>
   );
