@@ -12,8 +12,8 @@ const Logout = () => {
     //console.log("click");
     document.cookie = "uid=; expires=Thu, 01 Jan 1970 00:00:01 GMT;";
     toast.success("Logout Successfull");
-    //window.location.reload();
-    navigate('/');
+    window.location.reload();
+    //navigate('/');
     
   };
   return (
