@@ -29,7 +29,7 @@ const Login = () => {
     dispatch({ type: "LOGIN_SUCCESS", payload: data?.user });
     //console.log(data);
     toast.success(data.msg);
-    if(from=='/upload/login'){
+    if(from==='/upload/login'){
       navigate('/upload');
     }else{
       navigate(-1)
