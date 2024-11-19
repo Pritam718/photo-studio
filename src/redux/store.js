@@ -23,6 +23,7 @@ const asycMiddleware = (store) => (next) => async (action) => {
         next(logoutAction());
       }
   }
+  next(action);
 };
 
 const store = createStore(rootReducer, applyMiddleware(asycMiddleware));
