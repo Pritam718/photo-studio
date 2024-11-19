@@ -8,7 +8,7 @@ import store from './redux/store';
 import { checkAuth } from './redux/action/userAction';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-store.dispatch(checkAuth())
+store.dispatch({type:"CHECK_AUTH"})
 root.render(
   <React.StrictMode>
     <Provider store={store}>

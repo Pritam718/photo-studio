@@ -17,7 +17,7 @@ const Home = () => {
     <div className="h-screen w-full bg-gray-900 bg-cover bg-no-repeat bg-[url('Images/background.jpg')] overflow-auto">
         
         <div className='my-10 flex justify-center mx-5 lg:mx-0'>
-          <h1 className='text-4xl  font-bold text-gray-700'>Flashes</h1>
+          <h1 className='text-4xl  font-bold text-gray-700'>Flashes </h1>
         </div>
         <div className='my-10 flex justify-center mx-5 lg:mx-0'>
           <h1 className='text-4xl  font-semibold'>Stunning free stock photos for download</h1>

@@ -3,6 +3,7 @@ import userServices from '../services/userServices';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import toast from 'react-hot-toast';
+import { loginSuccessAction } from '../redux/action/userAction';
 //import axios from 'axios';
 
 const Login = () => {
@@ -26,7 +27,7 @@ const Login = () => {
     formData.append("password",password);
 
     const {data}=await userServices.handleUserLogin(formData);
-    dispatch({ type: "LOGIN_SUCCESS", payload: data?.user });
+    dispatch(loginSuccessAction(data?.user));
     //console.log(data);
     toast.success(data.msg);
     if(from==='/upload/login'){

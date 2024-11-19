@@ -9,12 +9,10 @@ const Logout = () => {
 
   const navigate = useNavigate();
   const logout = () => {
-    //console.log("click");
-    document.cookie = "uid=; expires=Thu, 01 Jan 1970 00:00:01 GMT;";
+    Cookies.remove("uid");
     toast.success("Logout Successfull");
     window.location.reload();
     //navigate('/');
-    
   };
   return (
     <div className="flex h-screen w-full items-center justify-center bg-gray-900 bg-cover bg-no-repeat bg-[url('Images/bg2.webp')]">
@@ -30,11 +28,9 @@ const Logout = () => {
             </div>
 
             <div className="mb-4 text-xl flex justify-center">
-            {userDetails?.lastName}
+              {userDetails?.lastName}
             </div>
-            <div className="mb-4 text-xl">
-            {userDetails?.email}
-            </div>
+            <div className="mb-4 text-xl">{userDetails?.email}</div>
             <div className="mt-8 flex justify-center text-lg text-black">
               <button
                 type="submit"
@@ -44,9 +40,9 @@ const Logout = () => {
                 Logout
               </button>
             </div>
+          </div>
         </div>
       </div>
-    </div>
     </div>
   );
 };
