@@ -11,8 +11,8 @@ const Logout = () => {
   const logout = () => {
     Cookies.remove("uid");
     toast.success("Logout Successfull");
+    navigate("/");
     window.location.reload();
-    //navigate('/');
   };
   return (
     <div className="flex h-screen w-full items-center justify-center bg-gray-900 bg-cover bg-no-repeat bg-[url('Images/bg2.webp')]">
